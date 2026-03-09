@@ -83,4 +83,12 @@ Complete refactor from single-file CLI to full agent framework.
 
 ---
 
+### 🔧 Repository Recovery (2026-03-09)
+- **Repository Migration**: Moved from cadpal repo to dedicated https://github.com/SingularityAI-Dev/Nvidia-CLI
+- **Module Fix**: Restored missing `memory/` module that was lost during extraction
+- **Installation**: Verified `pip install -e .` works correctly
+- **Functionality**: Confirmed `nv --help` and `nv agent list` work as expected
+
+---
+
 *Format based on [Keep a Changelog](https://keepachangelog.com/)*

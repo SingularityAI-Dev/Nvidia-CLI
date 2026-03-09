@@ -62,4 +62,25 @@
 
 ---
 
+### ✅ Repository Recovery Complete (2026-03-09)
+
+#### What Was Done
+1. **Extracted** NVIDIA CLI v7.0 from cadpal repo (commit 8db8868)
+2. **Created** new dedicated repository: https://github.com/SingularityAI-Dev/Nvidia-CLI
+3. **Pushed** all 40 files with full git history
+4. **Cloned** to local working directory
+5. **Fixed** missing `memory/` module (was not copied during extraction)
+6. **Installed** in editable mode: `pip install -e .`
+7. **Verified** full functionality:
+   - `nv --help` ✓
+   - `nv agent list` ✓
+   - shows default agent with OpenClaw identity ✓
+
+#### GitHub Repository
+- **URL**: https://github.com/SingularityAI-Dev/Nvidia-CLI
+- **Status**: Public, fully functional
+- **Branches**: master (default)
+
+---
+
 *Last updated: 2026-03-09*
