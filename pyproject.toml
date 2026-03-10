@@ -46,8 +46,9 @@ dev = [
 nv = "nv_cli.cli:app"
 
 [project.urls]
-Homepage = "https://github.com/nvidia/nv-cli"
-Documentation = "https://docs.nvidia.com/nv-cli"
+Homepage = "https://github.com/SingularityAI-Dev/Nvidia-CLI"
+Repository = "https://github.com/SingularityAI-Dev/Nvidia-CLI"
+Issues = "https://github.com/SingularityAI-Dev/Nvidia-CLI/issues"
 
 [tool.hatch.build.targets.wheel]
 packages = ["nv_cli"]
