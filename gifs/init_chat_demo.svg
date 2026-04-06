@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 360" font-family="'SF Mono', 'Fira Code', 'Cascadia Code', monospace">
+  <rect width="860" height="360" fill="#0d1117" rx="10"/>
+  <rect width="860" height="36" fill="#161b22" rx="10"/>
+  <rect width="860" height="18" y="18" fill="#161b22"/>
+  <circle cx="20" cy="18" r="6" fill="#ff5f56"/>
+  <circle cx="40" cy="18" r="6" fill="#ffbd2e"/>
+  <circle cx="60" cy="18" r="6" fill="#27c93f"/>
+  <text x="430" y="23" text-anchor="middle" fill="#8b949e" font-size="12" font-family="'SF Mono','Fira Code',monospace">nvidia-cli — nv chat / /init</text>
+
+  <text x="20" y="68" fill="#e6edf3" font-size="13" opacity="0">$ nv chat
+    <animate attributeName="opacity" from="0" to="1" begin="0.3s" dur="0.01s" fill="freeze"/>
+  </text>
+  <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="0.7s" dur="0.01s" fill="freeze"/>
+    <text x="20" y="90" fill="#3fb950" font-size="13">  ✓ Connected to </text>
+    <text x="156" y="90" fill="#f0883e" font-size="13">nvidia/llama-3.1-70b-instruct</text>
+  </g>
+  <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="1.0s" dur="0.01s" fill="freeze"/>
+    <text x="20" y="112" fill="#e6edf3" font-size="13">  Type </text>
+    <text x="62" y="112" fill="#58a6ff" font-size="13">/help</text>
+    <text x="104" y="112" fill="#e6edf3" font-size="13"> for commands.  </text>
+    <text x="232" y="112" fill="#8b949e" font-size="13">Permission mode: ask</text>
+  </g>
+
+  <text x="20" y="140" fill="#e6edf3" font-size="13" opacity="0">nv&gt; /init
+    <animate attributeName="opacity" from="0" to="1" begin="1.6s" dur="0.01s" fill="freeze"/>
+  </text>
+  <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="2.0s" dur="0.01s" fill="freeze"/>
+    <text x="20" y="162" fill="#58a6ff" font-size="13">  → Analysing codebase in </text>
+    <text x="228" y="162" fill="#f0883e" font-size="13">~/projects/my-api</text>
+    <text x="368" y="162" fill="#58a6ff" font-size="13">...</text>
+  </g>
+  <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="2.4s" dur="0.01s" fill="freeze"/>
+    <text x="20" y="184" fill="#8b949e" font-size="13">    Scanning 142 files across 18 modules</text>
+  </g>
+  <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="2.8s" dur="0.01s" fill="freeze"/>
+    <text x="20" y="206" fill="#8b949e" font-size="13">    Detected: Python 3.11 · FastAPI · PostgreSQL · Redis</text>
+  </g>
+  <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="3.2s" dur="0.01s" fill="freeze"/>
+    <text x="20" y="228" fill="#3fb950" font-size="13">  ✓ Context map saved to </text>
+    <text x="220" y="228" fill="#f0883e" font-size="13">.nv/NVIDIA.md</text>
+  </g>
+
+  <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="3.7s" dur="0.01s" fill="freeze"/>
+    <text x="20" y="256" fill="#bc8cff" font-size="13">Nova 🤖 </text>
+    <text x="84" y="256" fill="#8b949e" font-size="13">&gt; Got it! I've mapped your FastAPI project.</text>
+    <text x="84" y="274" fill="#c9d1d9" font-size="13">   Found 4 routers, 3 DB models, and a Redis cache layer.</text>
+  </g>
+
+  <text x="20" y="302" fill="#e6edf3" font-size="13" opacity="0">nv&gt; /add src/auth/router.py
+    <animate attributeName="opacity" from="0" to="1" begin="4.3s" dur="0.01s" fill="freeze"/>
+  </text>
+  <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="4.7s" dur="0.01s" fill="freeze"/>
+    <text x="20" y="324" fill="#3fb950" font-size="13">  ✓ Loaded </text>
+    <text x="104" y="324" fill="#f0883e" font-size="13">src/auth/router.py</text>
+    <text x="264" y="324" fill="#e6edf3" font-size="13"> into context (284 lines)</text>
+  </g>
+
+  <rect x="20" y="336" width="9" height="16" fill="#e6edf3" rx="1">
+    <animate attributeName="opacity" values="0;0;0;0;0;0;0;0;0;0;1;1;0;1;1;0" begin="5.0s" dur="1.2s" repeatCount="indefinite"/>
+  </rect>
+</svg>

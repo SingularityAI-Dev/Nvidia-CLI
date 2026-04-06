@@ -42,7 +42,7 @@
 
 Create and manage multiple AI agents, each with their own configuration, model preferences, and behavior. Spawn subagents for parallel task execution.
 
-<p align="center"><img src="gifs/agents_gif_demo.html" alt="Multi-Agent System Demo" width="750"></p>
+<p align="center"><img src="gifs/agents_gif_demo.svg" alt="Multi-Agent System Demo" width="750"></p>
 
 ```bash
 nv agent list              # List all agents
@@ -56,7 +56,7 @@ nv agent delete mybot      # Remove an agent
 
 Give your agents personality through file-based identity documents. The **Soul** acts as active middleware, injecting personality into every interaction.
 
-<p align="center"><img src="gifs/soul_identity_demo.html" alt="Soul Identity Demo" width="750"></p>
+<p align="center"><img src="gifs/soul_identity_demo.svg" alt="Soul Identity Demo" width="750"></p>
 
 | File | Purpose |
 |------|---------|
@@ -72,7 +72,7 @@ Give your agents personality through file-based identity documents. The **Soul**
 
 Discover, install, and manage agent skills. To ensure safety in agentic loops, every skill is scanned for dangerous patterns before installation.
 
-<p align="center"><img src="gifs/skills_security_demo.html" alt="Skills Security Demo" width="750"></p>
+<p align="center"><img src="gifs/skills_security_demo.svg" alt="Skills Security Demo" width="750"></p>
 
 ```bash
 nv skill list              # List installed skills
@@ -103,7 +103,7 @@ nv memory search "database setup"
 
 Schedule periodic tasks that run within your agent's context — perfect for background maintenance or scheduled data syncing.
 
-<p align="center"><img src="gifs/heartbeat_demo.html" alt="Heartbeat Demo" width="750"></p>
+<p align="center"><img src="gifs/heartbeat_demo.svg" alt="Heartbeat Demo" width="750"></p>
 
 ```bash
 nv heartbeat status        # Check heartbeat task status
@@ -144,7 +144,7 @@ export NVIDIA_API_KEY="nvapi-your-key-here"
 
 Use the `/init` command to have the agent analyze your current codebase and generate a context map.
 
-<p align="center"><img src="gifs/init_chat_demo.html" alt="Init Chat Demo" width="750"></p>
+<p align="center"><img src="gifs/init_chat_demo.svg" alt="Init Chat Demo" width="750"></p>
 
 ```bash
 $ nv chat
