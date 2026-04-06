@@ -26,7 +26,9 @@
 ## Features
 
 ### Multi-Agent System
-Create and manage multiple AI agents, each with their own configuration, model preferences, and behavior. Spawn subagents for parallel task execution.
+
+Create and manage multiple AI agents, each with their own configuration, model
+preferences, and behavior. Spawn subagents for parallel task execution.
 
 ```bash
 nv agent list              # List all agents
@@ -35,17 +37,19 @@ nv agent delete mybot      # Remove an agent
 ```
 
 ### Soul / Identity System (OpenClaw)
+
 Give your agents personality through file-based identity documents:
 
-| File | Purpose |
-|------|---------|
-| `SOUL.md` | Core personality principles and values |
-| `IDENTITY.md` | Agent name, emoji, avatar |
-| `USER.md` | Human preferences and context |
-| `MEMORY.md` | Curated long-term memories |
-| `HEARTBEAT.md` | Periodic task definitions |
+| File           | Purpose                                |
+| -------------- | -------------------------------------- |
+| `SOUL.md`      | Core personality principles and values |
+| `IDENTITY.md`  | Agent name, emoji, avatar              |
+| `USER.md`      | Human preferences and context          |
+| `MEMORY.md`    | Curated long-term memories             |
+| `HEARTBEAT.md` | Periodic task definitions              |
 
 ### Skills System
+
 Discover, install, and manage agent skills with built-in security scanning.
 
 ```bash
@@ -54,10 +58,13 @@ nv skill install <path>    # Install a skill (pip, npm, brew, git)
 nv skill uninstall <name>  # Remove a skill
 ```
 
-Skills are auto-discovered via `SKILL.md` files and scanned for dangerous patterns (`eval`, `exec`, `subprocess` abuse) before installation.
+Skills are auto-discovered via `SKILL.md` files and scanned for dangerous
+patterns (`eval`, `exec`, `subprocess` abuse) before installation.
 
 ### Hybrid Memory
-Persistent memory with hybrid search combining vector embeddings and keyword (BM25) matching.
+
+Persistent memory with hybrid search combining vector embeddings and keyword
+(BM25) matching.
 
 ```bash
 nv memory add "Project uses FastAPI with PostgreSQL"
@@ -69,6 +76,7 @@ nv memory search "database setup"
 - Automatic context injection into conversations
 
 ### Heartbeat System
+
 Schedule periodic tasks that run within your agent's context.
 
 ```bash
@@ -79,41 +87,43 @@ nv heartbeat status        # Check heartbeat task status
 - Batch processing for grouped checks
 
 ### Interactive Chat & One-Shot Queries
+
 ```bash
 nv chat                    # Start interactive chat session
 nv ask "Explain CUDA cores" # One-shot query
 ```
 
 ### In-Chat Slash Commands
-| Command | Description |
-|---------|-------------|
-| `/init` | Analyze codebase, generate context file |
-| `/add <file>` | Load a file into conversation context |
-| `/clear` | Reset conversation and file context |
-| `/model <name>` | Switch AI model |
-| `/skill` | Manage skills within chat |
-| `/help` | Show available commands |
-| `/quit` | Exit with session summary |
+
+| Command         | Description                             |
+| --------------- | --------------------------------------- |
+| `/init`         | Analyze codebase, generate context file |
+| `/add <file>`   | Load a file into conversation context   |
+| `/clear`        | Reset conversation and file context     |
+| `/model <name>` | Switch AI model                         |
+| `/skill`        | Manage skills within chat               |
+| `/help`         | Show available commands                 |
+| `/quit`         | Exit with session summary               |
 
 ### Available Models
 
-| Alias | Model |
-|-------|-------|
-| `default` | `deepseek-ai/deepseek-v3.2` |
-| `nano` | `nvidia/nemotron-nano-12b-v2-vl` |
+| Alias     | Model                                    |
+| --------- | ---------------------------------------- |
+| `default` | `deepseek-ai/deepseek-v3.2`              |
+| `nano`    | `nvidia/nemotron-nano-12b-v2-vl`         |
 | `llama70` | `nvidia/llama-3.1-nemotron-70b-instruct` |
-| `llama8` | `meta/llama-3.1-8b-instruct` |
+| `llama8`  | `meta/llama-3.1-8b-instruct`             |
 
 ### Permission Modes
 
 Control how the agent interacts with your system:
 
-| Mode | Behavior |
-|------|----------|
-| `ask` | Always ask before any action (default) |
+| Mode           | Behavior                                      |
+| -------------- | --------------------------------------------- |
+| `ask`          | Always ask before any action (default)        |
 | `accept_edits` | Auto-accept file edits, ask for other actions |
-| `auto` | Auto-approve safe operations |
-| `never` | Dry-run mode — no actions executed |
+| `auto`         | Auto-approve safe operations                  |
+| `never`        | Dry-run mode — no actions executed            |
 
 ---
 
@@ -246,14 +256,21 @@ nv_cli/
     └── ...              # Shared utilities
 ```
 
-Additionally, `nv.py` at the repo root contains the legacy v6 monolithic CLI (retained for reference).
+Additionally, `nv.py` at the repo root contains the legacy v6 monolithic CLI
+(retained for reference).
 
 ### Key Design Decisions
 
-- **OpenAI-compatible SDK** — Uses NVIDIA's OpenAI-compatible endpoint (`integrate.api.nvidia.com`), so any model available on NVIDIA's platform works out of the box.
-- **ReAct Agent Loop** — The agent follows the Reason + Act pattern: it thinks, selects a tool, executes it, observes the result, and repeats.
-- **File-based Identity** — Inspired by [OpenClaw](https://github.com/openclaw), agent personality is defined through markdown files rather than hardcoded prompts.
-- **Modular Package** — Each subsystem (agents, memory, skills, heartbeat, soul, tools) is an independent module with clean interfaces.
+- **OpenAI-compatible SDK** — Uses NVIDIA's OpenAI-compatible endpoint
+  (`integrate.api.nvidia.com`), so any model available on NVIDIA's platform
+  works out of the box.
+- **ReAct Agent Loop** — The agent follows the Reason + Act pattern: it thinks,
+  selects a tool, executes it, observes the result, and repeats.
+- **File-based Identity** — Inspired by [OpenClaw](https://github.com/openclaw),
+  agent personality is defined through markdown files rather than hardcoded
+  prompts.
+- **Modular Package** — Each subsystem (agents, memory, skills, heartbeat, soul,
+  tools) is an independent module with clean interfaces.
 
 ---
 
@@ -278,7 +295,8 @@ nv config edit           # Edit configuration interactively
 
 ## Contributing
 
-We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details on:
+We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for
+details on:
 
 - Setting up the development environment
 - Code style and conventions
@@ -318,19 +336,26 @@ git checkout -b feature/your-feature
 
 ## License
 
-This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for
+details.
 
 ---
 
 ## Acknowledgments
 
-- [NVIDIA AI Foundation](https://build.nvidia.com/) for providing the AI model endpoints
-- [OpenClaw](https://github.com/openclaw) for the soul/identity system inspiration
-- [Typer](https://typer.tiangolo.com/) and [Rich](https://rich.readthedocs.io/) for the terminal experience
-- [prompt_toolkit](https://python-prompt-toolkit.readthedocs.io/) for interactive input
+- [NVIDIA AI Foundation](https://build.nvidia.com/) for providing the AI model
+  endpoints
+- [OpenClaw](https://github.com/openclaw) for the soul/identity system
+  inspiration
+- [Typer](https://typer.tiangolo.com/) and [Rich](https://rich.readthedocs.io/)
+  for the terminal experience
+- [prompt_toolkit](https://python-prompt-toolkit.readthedocs.io/) for
+  interactive input
 
 ---
 
 <p align="center">
   Built with NVIDIA AI &bull; <a href="https://github.com/SingularityAI-Dev/Nvidia-CLI">GitHub</a> &bull; <a href="https://github.com/SingularityAI-Dev/Nvidia-CLI/issues">Issues</a>
 </p>
+
+---
