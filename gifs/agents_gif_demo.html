@@ -1,0 +1,50 @@
+
+<style>
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+  @keyframes fadeIn { from{opacity:0;transform:translateY(4px)} to{opacity:1;transform:translateY(0)} }
+  .cursor { animation: blink 1s step-end infinite; }
+  .line { animation: fadeIn 0.25s ease forwards; opacity: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+</style>
+<div style="background:#0d1117;border-radius:10px;overflow:hidden;font-family:var(--font-mono);font-size:13px;line-height:1.6;padding:0 0 4px;">
+  <div style="background:#161b22;padding:10px 16px;display:flex;align-items:center;gap:8px;border-bottom:1px solid #30363d">
+    <span style="width:12px;height:12px;border-radius:50%;background:#ff5f56;display:inline-block"></span>
+    <span style="width:12px;height:12px;border-radius:50%;background:#ffbd2e;display:inline-block"></span>
+    <span style="width:12px;height:12px;border-radius:50%;background:#27c93f;display:inline-block"></span>
+    <span style="margin-left:8px;color:#8b949e;font-size:12px">nvidia-cli — nv agent</span>
+  </div>
+  <div id="term-agents" style="padding:16px 20px;min-height:220px;"></div>
+</div>
+<script>
+const lines = [
+  { text: '$ nv agent list', color: '#e6edf3', delay: 300 },
+  { text: '', delay: 100 },
+  { text: '  NAME          MODEL                  STATUS', color: '#8b949e', delay: 200 },
+  { text: '  ──────────────────────────────────────────', color: '#30363d', delay: 50 },
+  { text: '  default       nvidia/llama-3.1-70b   <span style="color:#3fb950">● active</span>', color: '#e6edf3', delay: 200 },
+  { text: '  codebot       nvidia/mistral-nemo     <span style="color:#3fb950">● active</span>', color: '#e6edf3', delay: 150 },
+  { text: '  researcher    nvidia/llama-3.3-70b   <span style="color:#8b949e">○ idle</span>', color: '#e6edf3', delay: 150 },
+  { text: '', delay: 100 },
+  { text: '$ nv agent create devops-bot', color: '#e6edf3', delay: 600 },
+  { text: '  <span style="color:#79c0ff">→</span> Initialising agent <span style="color:#f0883e">devops-bot</span>...', color: '#e6edf3', delay: 300 },
+  { text: '  <span style="color:#79c0ff">→</span> Loading soul files from <span style="color:#f0883e">.nv/souls/devops-bot/</span>', color: '#e6edf3', delay: 250 },
+  { text: '  <span style="color:#79c0ff">→</span> Spawning 2 subagents for parallel execution', color: '#e6edf3', delay: 250 },
+  { text: '  <span style="color:#3fb950">✓</span> Agent <span style="color:#f0883e">devops-bot</span> ready', color: '#e6edf3', delay: 200 },
+  { text: '', delay: 100 },
+  { text: '$ <span class="cursor" style="background:#e6edf3;color:#0d1117">_</span>', color: '#e6edf3', delay: 300 },
+];
+const el = document.getElementById('term-agents');
+let i = 0;
+function next() {
+  if (i >= lines.length) return;
+  const l = lines[i++];
+  const div = document.createElement('div');
+  div.className = 'line';
+  div.style.animationDelay = '0ms';
+  div.style.color = l.color || '#e6edf3';
+  div.innerHTML = l.text;
+  el.appendChild(div);
+  setTimeout(next, l.delay + 250);
+}
+setTimeout(next, 400);
+</script>

@@ -1,0 +1,56 @@
+
+<style>
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+  @keyframes fadeIn { from{opacity:0;transform:translateY(4px)} to{opacity:1;transform:translateY(0)} }
+  @keyframes scan { from{left:0} to{left:100%} }
+  .cursor { animation: blink 1s step-end infinite; }
+  .line { animation: fadeIn 0.2s ease forwards; opacity: 0; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+</style>
+<div style="background:#0d1117;border-radius:10px;overflow:hidden;font-family:var(--font-mono);font-size:13px;line-height:1.6;padding:0 0 4px;">
+  <div style="background:#161b22;padding:10px 16px;display:flex;align-items:center;gap:8px;border-bottom:1px solid #30363d">
+    <span style="width:12px;height:12px;border-radius:50%;background:#ff5f56;display:inline-block"></span>
+    <span style="width:12px;height:12px;border-radius:50%;background:#ffbd2e;display:inline-block"></span>
+    <span style="width:12px;height:12px;border-radius:50%;background:#27c93f;display:inline-block"></span>
+    <span style="margin-left:8px;color:#8b949e;font-size:12px">nvidia-cli — skills &amp; security</span>
+  </div>
+  <div id="term-skills" style="padding:16px 20px;min-height:260px;"></div>
+</div>
+<script>
+const lines = [
+  { text: '$ nv skill install ./skills/web-scraper', color: '#e6edf3', delay: 400 },
+  { text: '', delay: 80 },
+  { text: '  <span style="color:#79c0ff">→</span> Discovered <span style="color:#f0883e">SKILL.md</span> — web-scraper v1.2.0', delay: 200 },
+  { text: '  <span style="color:#79c0ff">→</span> Running security scan...', delay: 250 },
+  { text: '', delay: 80 },
+  { text: '  <span style="color:#8b949e">  Checking</span> eval() usage         <span style="color:#3fb950">✓ clean</span>', delay: 160 },
+  { text: '  <span style="color:#8b949e">  Checking</span> exec() calls          <span style="color:#3fb950">✓ clean</span>', delay: 130 },
+  { text: '  <span style="color:#8b949e">  Checking</span> subprocess abuse      <span style="color:#3fb950">✓ clean</span>', delay: 130 },
+  { text: '  <span style="color:#8b949e">  Checking</span> network exfiltration  <span style="color:#3fb950">✓ clean</span>', delay: 130 },
+  { text: '', delay: 80 },
+  { text: '  <span style="color:#3fb950">✓</span> Security scan passed (4/4 checks)', delay: 200 },
+  { text: '  <span style="color:#79c0ff">→</span> Installing via pip...', delay: 250 },
+  { text: '  <span style="color:#3fb950">✓</span> Skill <span style="color:#f0883e">web-scraper</span> installed successfully', delay: 300 },
+  { text: '', delay: 100 },
+  { text: '$ nv skill list', color: '#e6edf3', delay: 500 },
+  { text: '', delay: 80 },
+  { text: '  <span style="color:#3fb950">●</span> web-scraper   v1.2.0   pip    auto-discovered', delay: 150 },
+  { text: '  <span style="color:#3fb950">●</span> git-helper    v2.0.1   git    auto-discovered', delay: 130 },
+  { text: '  <span style="color:#3fb950">●</span> code-runner   v0.9.3   npm    manual', delay: 130 },
+  { text: '', delay: 100 },
+  { text: '$ <span class="cursor" style="background:#e6edf3;color:#0d1117">_</span>', delay: 200 },
+];
+const el = document.getElementById('term-skills');
+let i = 0;
+function next() {
+  if (i >= lines.length) return;
+  const l = lines[i++];
+  const div = document.createElement('div');
+  div.className = 'line';
+  div.style.color = l.color || '#e6edf3';
+  div.innerHTML = l.text;
+  el.appendChild(div);
+  setTimeout(next, l.delay + 220);
+}
+setTimeout(next, 400);
+</script>
