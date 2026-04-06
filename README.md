@@ -6,7 +6,9 @@
 </p>
 
 <h1 align="center">NVIDIA CLI v7.0</h1>
-![Nvidia-CLI Architecture Visualization](docs/preview.gif)
+<p align="center">
+  <img src="https://github.com/SingularityAI-Dev/Nvidia-CLI/raw/main/docs/preview.gif" alt="Nvidia-CLI Architecture Visualization">
+</p>
 
 > An advanced agentic framework for NVIDIA LLMs, featuring persistent memory, skill discovery, and file-based identity (Soul).
 
