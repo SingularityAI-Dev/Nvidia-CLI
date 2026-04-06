@@ -6,6 +6,9 @@
 </p>
 
 <h1 align="center">NVIDIA CLI v7.0</h1>
+![Nvidia-CLI Architecture Visualization](docs/preview.gif)
+
+> An advanced agentic framework for NVIDIA LLMs, featuring persistent memory, skill discovery, and file-based identity (Soul).
 
 <p align="center">
   <strong>An OpenClaw-inspired multi-agent AI framework for NVIDIA's AI endpoints.</strong><br>
